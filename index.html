@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telemetry Data Converter - Test Results</title>
+    <meta name="description" content="Deloitte Technology Virtual Experience - JSON Format Converter with unit tests.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Telemetry Data Converter</h1>
+        <p class="subtitle">Deloitte Technology Virtual Experience &mdash; JSON Format Converter</p>
+
+        <div class="status">
+            <div class="status-icon">✅</div>
+            <div>
+                <div class="status-text">ALL TESTS PASSED</div>
+                <div class="status-sub">3 of 3 tests passed</div>
+            </div>
+        </div>
+
+        <div class="section-title">Test Output</div>
+        <div class="output" id="test-output"></div>
+
+        <br>
+        <div class="section-title">How It Works</div>
+
+        <div class="card">
+            <h3>Format 1 &rarr; Standard</h3>
+            <p>Input uses a single slash-separated <code>location</code> string, <code>operationStatus</code> and <code>temp</code> field names, and a Unix millisecond timestamp.</p>
+            <p>Converted by splitting the location string and renaming fields to the standard structure.</p>
+            <span class="badge">data-1.json</span>
+        </div>
+
+        <div class="card">
+            <h3>Format 2 &rarr; Standard</h3>
+            <p>Input stores device info nested under a <code>device</code> object and uses an ISO 8601 timestamp string.</p>
+            <p>Converted by flattening the device object and parsing the timestamp into Unix milliseconds.</p>
+            <span class="badge">data-2.json</span>
+        </div>
+
+        <div class="card">
+            <h3>Technologies Used</h3>
+            <ul>
+                <li>Python 3 &mdash; conversion logic</li>
+                <li>unittest &mdash; test framework</li>
+                <li>json &amp; datetime &mdash; standard library modules</li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
