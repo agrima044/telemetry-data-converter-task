@@ -1,1 +1,0 @@
-# telemetry-data-converter-task
