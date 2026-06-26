@@ -47,3 +47,5 @@ All 3 tests pass:
 ## Live Demo
 
 https://left-concerned-gnudebugger--kuhu04.replit.app
+
+https://agrima044.github.io/telemetry-data-converter-task/
