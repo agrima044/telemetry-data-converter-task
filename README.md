@@ -1,21 +1,62 @@
 # Telemetry Data Converter
 
-Deloitte Technology Virtual Experience Programme — Software Engineering Task
+A responsive web application that converts IoT telemetry data from multiple JSON formats into a single standardized structure for easier processing, validation, and analysis.
 
-## Overview
+## 🌐 Live Demo
 
-This project converts IoT device telemetry data from two different JSON formats into a single standardised output format.
+**GitHub Pages:**
+https://agrima044.github.io/telemetry-data-converter-task/
 
-## Project Structure
+---
 
-```
-project/
+## 📸 Preview
+
+![Telemetry Data Converter](./preview/telemetry-data-converter-preview.png)
+
+---
+
+## ✨ Features
+
+* Converts telemetry data from two different JSON formats
+* Automatically detects the input format
+* Standardizes device information into a unified JSON schema
+* Converts ISO 8601 timestamps into Unix milliseconds
+* Displays test results through a responsive web interface
+* Includes Python implementation with automated unit tests
+* Clean, responsive UI built with HTML, CSS, and JavaScript
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+### Backend Logic
+
+* Python 3
+* JSON
+* datetime
+* unittest
+
+---
+
+## 📂 Project Structure
+
+```text
+Telemetry-Data-Converter/
 │
-├── index.html          ← Live results page (GitHub Pages)
-├── style.css           ← Stylesheet
-├── script.js           ← JavaScript
+├── index.html
+├── style.css
+├── script.js
 │
-├── python-version/     ← Python source code
+├── preview/
+│   └── telemetry-data-converter-preview.png
+│
+├── python-version/
 │   ├── main.py
 │   ├── data-1.json
 │   ├── data-2.json
@@ -24,25 +65,105 @@ project/
 └── README.md
 ```
 
-## How It Works
+---
 
-**Format 1** stores location as a single slash-separated string and uses `operationStatus` and `temp` field names.
+## 🔄 Supported Input Formats
 
-**Format 2** stores device info nested under a `device` object and uses an ISO 8601 timestamp string.
+### Format 1
 
-Both are converted to a standardised structure with a nested `location` object, Unix millisecond timestamp, and a `data` object with `status` and `temperature`.
+* Flat device information
+* Slash-separated location string
+* Unix timestamp
+* `operationStatus`
+* `temp`
 
-## Running Python Tests
+### Format 2
+
+* Nested device object
+* Separate location fields
+* ISO 8601 timestamp
+* Standard telemetry object
+
+Both formats are converted into a consistent output containing:
+
+* Device ID
+* Device Type
+* Unix timestamp
+* Structured location object
+* Standardized telemetry data
+
+---
+
+## 📋 Standard Output
+
+```json
+{
+  "deviceID": "...",
+  "deviceType": "...",
+  "timestamp": 1624445837783,
+  "location": {
+    "country": "...",
+    "city": "...",
+    "area": "...",
+    "factory": "...",
+    "section": "..."
+  },
+  "data": {
+    "status": "...",
+    "temperature": 22
+  }
+}
+```
+
+---
+
+## 🚀 Running the Project
+
+### Web Version
+
+Open `index.html` in your browser or visit the live demo.
+
+### Python Version
 
 ```bash
 cd python-version
 python3 main.py
 ```
 
-All 3 tests pass:
-- `test_sanity` — validates the expected result structure
-- `test_dataType1` — converts Format 1 successfully
-- `test_dataType2` — converts Format 2 successfully
+---
+
+## ✅ Unit Tests
+
+The project includes automated tests to verify the conversion logic.
+
+* ✔️ Sanity Test
+* ✔️ Format 1 Conversion
+* ✔️ Format 2 Conversion
+
+Run the tests using:
+
+```bash
+python3 main.py
+```
+
+---
+
+## 🎯 What I Practiced
+
+* JSON data transformation
+* Data normalization
+* Python programming
+* Unit testing
+* Responsive web development
+* DOM manipulation
+* GitHub Pages deployment
+* Clean project organization
+
+---
+
+## 👩‍💻 Author
+
+**agrima044**
 
 ## Live Demo
 
